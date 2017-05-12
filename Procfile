@@ -1,1 +1,1 @@
-worker: python3 disc.py
+web: python3 disc.py
