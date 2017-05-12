@@ -1,5 +1,6 @@
 import discord
 import asyncio
+import random
 
 client = discord.Client()
 
@@ -24,5 +25,16 @@ async def on_message(message):
         tmp = await client.send_message(message.channel, 'ZzZ...')
         await asyncio.sleep(5)
         await client.edit_message(tmp, 'Done sleeping')
+    elif message.content.startswith('!bite'):
+        print(message.channel)
+        meters = random.randint(0,1)
+        centimeters = random.randint(1,99)
+        await client.send_message(message.channel, 'Ta bite mesure {} metre {} en ce moment'.format(meters,centimeters))
+
+@client.event
+async def on_member_join(member):
+    print("bite")
+    server = member.server
+    await client.send_message(server.get_channel(self.settings[server.id]["asciip"]), "Bienvenue {}, jeune padabite".format(member.name))
 
 client.run("MzEyNDg5ODQyMTI0NTIxNDcy.C_b8OA.RL5BrCK2ycVzuGX_--QUA0IhpTQ")
