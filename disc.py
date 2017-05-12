@@ -23,6 +23,6 @@ async def on_message(message):
     elif message.content.startswith('!sleep'):
         tmp = await client.send_message(message.channel, 'ZzZ...')
         await asyncio.sleep(5)
-        await client.send_message(message.channel, 'Done sleeping')
+        await client.edit_message(tmp, 'Done sleeping')
 
 client.run("MzEyNDg5ODQyMTI0NTIxNDcy.C_b8OA.RL5BrCK2ycVzuGX_--QUA0IhpTQ")
