@@ -41,7 +41,7 @@ async def on_message(message):
         gameBot = discord.Game()
         gameBot.name = name
         await client.change_presence(game = gameBot)
-        await client.send_message(message.channel, "Et ça m'amuse de jouer à {}".format(game))
+        await client.send_message(message.channel, "Et ça m'amuse de jouer à {}".format(name))
         
     elif message.content.startswith("!help"):
         sep = "\n"
