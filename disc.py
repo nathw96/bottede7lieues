@@ -90,4 +90,4 @@ async def on_message(message):
 async def on_member_join(member):
     await client.send_message(member.server.get_channel("279533463772856320"), "Bienvenue {}, jeune padabite".format(member.name))
 
-client.run("MzEyNDg5ODQyMTI0NTIxNDcy.C_b8OA.RL5BrCK2ycVzuGX_--QUA0IhpTQ")
+client.run("MzEzODAxNzU0NTgyMTg4MDMz.C_u6Rw.zSVUjqDomSc37LjdqpplpIIUe8w")
