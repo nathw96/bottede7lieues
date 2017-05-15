@@ -68,6 +68,12 @@ async def on_message(message):
                 await client.kick(member)
         else:
             await client.send_message(message.channel, "{} n'a pas été trouvé".format(name))    
+    elif (message.content.find('bit') != -1) or (message.content.find('Bit') != -1) :
+        emobite = None
+        for emoji in client.get_all_emojis():
+            if emoji.name == "Bite":
+                emobite = emoji
+        await client.add_reaction(message, emobite)
         
     elif message.content.startswith("!help"):
         sep = "\n"
@@ -76,8 +82,7 @@ async def on_message(message):
                "!sleep - Fait dormir le bot pendant 5 secondes",
                "!bite - Affiche la taille de votre bite",
                "!status [statut] - Change le jeu auquel le bot joue",
-               "!find",
-               "!getpoids [name] - Renvoie le poids de l'utilisateur demandé"
+               "!kick [name] - Kick l'utilisateur demandé"
                "!help - Affiche toutes les commandes disponibles")
         await client.send_message(message.channel, sep.join(msg))
 
