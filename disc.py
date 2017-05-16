@@ -85,7 +85,7 @@ async def on_message(message):
         for emoji in client.get_all_emojis():
             if emoji.name == "Bite":
                 emobite = emoji
-        chain = message.split(" ")
+        chain = message.content.split(" ")
         if ("Bite" in chain) or ("Bit" in chain) or ("bite" in chain) or ("bit" in chain):
             await client.add_reaction(message, emobite)
 
