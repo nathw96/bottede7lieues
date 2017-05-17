@@ -67,7 +67,23 @@ async def on_message(message):
             else:
                 await client.kick(member)
         else:
+            await client.send_message(message.channel, "{} n'a pas été trouvé".format(name))
+    elif message.content.startswith('!ban'):
+        name = message.content.split(" ")
+        sep = " "
+        name = sep.join(name[1:])
+        member = None
+        for user in client.get_all_members():
+            if user.name + "#" +user.discriminator == name:
+                member = user
+        if member != None:
+            if getPoids(member) >= getPoids(message.author):
+                await client.send_message(message.channel, "Vous n'avez pas le droit de bannir {} ({})".format(name, getPoids(message.author)))
+            else:
+                await client.ban(member)
+        else:
             await client.send_message(message.channel, "{} n'a pas été trouvé".format(name))    
+
         
     elif message.content.startswith("!help"):
         sep = "\n"
