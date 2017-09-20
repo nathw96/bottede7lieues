@@ -20,7 +20,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
-    print( discord.__version__)
+    print(discord.__version__)
 
 @client.event
 async def on_message(message):
@@ -53,6 +53,7 @@ async def on_message(message):
         gameBot = discord.Game()
         gameBot.name = name
         await client.change_presence(game = gameBot)
+        print(client.status)
         await client.send_message(message.channel, "Et ça m'amuse de jouer à {}".format(name))
     elif message.content.startswith('!kick'):
         name = message.content.split(" ")
