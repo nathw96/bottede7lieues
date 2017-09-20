@@ -86,7 +86,9 @@ async def on_message(message):
         else:
             await client.send_message(message.channel, "{} n'a pas été trouvé".format(name))    
     elif message.content.startswith('!ninja'):
-         await client.send_message(message.channel, "Ninjaaaa")
+        pic = discord.Embed()
+        pic.url = "http://www.dalerodgers.co.uk/wp-content/uploads/2015/08/ninja-computer-300x226.png"
+        await client.send_message(message.channel, embed = pic)
          
     elif message.content.startswith("!help"):
         sep = "\n"
