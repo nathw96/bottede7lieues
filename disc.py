@@ -86,7 +86,7 @@ async def on_message(message):
         else:
             await client.send_message(message.channel, "{} n'a pas été trouvé".format(name))    
     elif message.content.startswith('!ninja'):
-         await client.send_message("Ninjaaaa")
+         await client.send_message(message.channel, "Ninjaaaa")
          
     elif message.content.startswith("!help"):
         sep = "\n"
