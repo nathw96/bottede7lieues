@@ -51,6 +51,8 @@ async def on_message(message):
         name = sep.join(name[1:])
         gameBot = discord.Game()
         gameBot.name = name
+        print(name)
+        await client.change_status(game = gameBot)
         await client.change_presence(game = gameBot)
         await client.send_message(message.channel, "Et ça m'amuse de jouer à {}".format(name))
     elif message.content.startswith('!kick'):
