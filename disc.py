@@ -85,8 +85,9 @@ async def on_message(message):
                 await client.ban(member)
         else:
             await client.send_message(message.channel, "{} n'a pas été trouvé".format(name))    
-
-        
+    elif message.content.startswith('!ninja'):
+         await client.send_message("Ninjaaaa")
+         
     elif message.content.startswith("!help"):
         sep = "\n"
         msg = ("Menu d'aide:",
@@ -94,7 +95,8 @@ async def on_message(message):
                "!sleep - Fait dormir le bot pendant 5 secondes",
                "!bite - Affiche la taille de votre bite",
                "!status [statut] - Change le jeu auquel le bot joue",
-               "!kick [name] - Kick l'utilisateur demandé"
+               "!kick [name] - Kick l'utilisateur demandé",
+               "!ninja - Ninjaaa",
                "!help - Affiche toutes les commandes disponibles")
         await client.send_message(message.channel, sep.join(msg))
 
